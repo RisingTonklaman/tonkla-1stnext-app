@@ -1,18 +1,21 @@
 "use client";
+import BigLayout from "@/components/for-first-page/BigLayout";
+import TitleText from "@/components/for-first-page/TitleText";
+import StartButton from "@/components/for-first-page/StartButton";
 import { useRouter } from "next/navigation";
-import { ChargeController } from "@/controllers/ChargeController";
-import TitleText from "@/components/TitleText";
-import StartButton from "@/components/StartButton";
 
 const Page = () => {
   const router = useRouter();
-  const controller = new ChargeController(router);
+
+  const toLogin = () => {
+    router.push("/login");
+  };
 
   return (
-    <div className="absolute bottom-10 w-full px-6 flex flex-col items-start">
-      <TitleText />
-      <StartButton onClick={() => controller.startCharging()} />
-    </div>
+    <BigLayout
+      children1={<TitleText />}
+      children2={<StartButton text="เริ่มการชาร์จ" onClick={toLogin} />}
+    />
   );
 };
 
