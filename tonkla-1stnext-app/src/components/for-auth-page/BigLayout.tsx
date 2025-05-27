@@ -26,7 +26,7 @@ export default function Biglayout({
         </p>
 
         {children1}
-        <div className="flex justify-center">{children2}</div>
+        <div className="mt-[10%] w-[350px] h-16 mx-auto">{children2}</div>
       </form>
 
       <div className="w-full px-6 mb-40"></div>

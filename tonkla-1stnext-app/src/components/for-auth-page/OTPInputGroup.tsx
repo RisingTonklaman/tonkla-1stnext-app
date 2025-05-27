@@ -37,7 +37,7 @@ export const OTPInputGroup = ({ values, onChange }: OTPInputGroupProps) => {
 
   console.log(values);
   return (
-    <div className="flex justify-center mb-6">
+    <div className="flex justify-center">
       {values.map((digit, index) => (
         <input
           key={index}
