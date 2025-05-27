@@ -10,7 +10,6 @@ const Page = () => {
   const toLogin = () => {
     router.push("/login");
   };
-
   return (
     <BigLayout
       children1={<TitleText />}

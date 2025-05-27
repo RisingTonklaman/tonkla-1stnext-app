@@ -30,8 +30,6 @@ export default function Biglayout({
           {children2}
         </div>
       </form>
-
-      {/* <div className="w-full px-6 mb-[20%]"></div> */}
     </>
   );
 }

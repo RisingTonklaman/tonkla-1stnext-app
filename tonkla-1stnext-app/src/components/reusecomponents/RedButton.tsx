@@ -1,6 +1,6 @@
 interface ButtonType {
   ButtonText: string;
-  onClick: any;
+  onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
 
 export default function RedButton({ ButtonText, onClick }: ButtonType) {
