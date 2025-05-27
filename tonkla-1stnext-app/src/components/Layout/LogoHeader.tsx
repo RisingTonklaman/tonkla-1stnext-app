@@ -1,7 +1,7 @@
 // components/LogoHeaderWithMenu.tsx
 "use client";
 import { useState } from "react";
-import LogoHeader0 from "../LogoHeader0";
+import LogoHeader0 from "./LogoHeader0";
 import SlideUpMenu from "../SlideUpMenu";
 
 export default function LogoHeader() {

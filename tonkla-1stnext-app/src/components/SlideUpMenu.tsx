@@ -36,21 +36,25 @@ export default function SlideUpMenu({
             <div className="flex flex-col justify-center h-full gap-2 px-4">
               <div className="flex flex-col items-start gap-4 ml-[10%]">
                 <div className="flex items-center gap-2">
-                  <img
-                    src="/phone-icon.png"
-                    alt="Phone"
-                    className="h-18 w-18 object-contain"
-                  />
+                  <picture>
+                    <img
+                      src="/phone-icon.png"
+                      alt="Phone"
+                      className="h-18 w-18 object-contain"
+                    />
+                  </picture>
                   <span className="text-cyan-400 text-[150%]">
                     &nbsp;: 099-999-9999
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <img
-                    src="/money_logo.png"
-                    alt="Money"
-                    className="h-18 w-18 object-contain"
-                  />
+                  <picture>
+                    <img
+                      src="/money_logo.png"
+                      alt="Money"
+                      className="h-18 w-18 object-contain"
+                    />
+                  </picture>
                   <span className="text-green-400 text-[150%]">
                     &nbsp;: 50 บาท
                   </span>
@@ -72,11 +76,13 @@ export default function SlideUpMenu({
                 </div>
               </div>
             </div>
-            <img
-              src="/language.png"
-              alt="Language"
-              className="absolute bottom-2 right-4 h-14 w-14 object-contain"
-            />
+            <picture>
+              <img
+                src="/language.png"
+                alt="Language"
+                className="absolute bottom-2 right-4 h-14 w-14 object-contain"
+              />
+            </picture>
             <div className="w-[90%] h-[2px] absolute bottom-0 left-1/2 -translate-x-1/2 bg-cyan-400 rounded-full shadow-[0_0_6px_#22d3ee]" />
           </div>
 
