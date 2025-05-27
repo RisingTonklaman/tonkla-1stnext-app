@@ -10,7 +10,7 @@ export default function ChargingSession() {
       {/* Header */}
       <div className="relative">
         {/* Circle Progress absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 */}
-        <div className="flex justify-center items-center h-[45vh]">
+        <div className="flex justify-center items-center h-[40vh]">
           <div className="w-48 h-48 rounded-full border-[12px] border-teal-400 border-t-0 border-b-0 flex flex-col items-center justify-center bg-black text-white shadow-xl">
             <FaBolt className="text-cyan-400 text-xl mb-1" />
             <span className="text-cyan-400 text-xl font-semibold">70%</span>
@@ -21,7 +21,7 @@ export default function ChargingSession() {
       </div>
 
       {/* Bottom Section mt-auto */}
-      <div className="mt-auto w-full bg-gradient-to-b from-teal-600 to-black text-white rounded-t-2xl rounded-b-none shadow-lg p-4 flex flex-col">
+      <div className="mt-auto w-full min-h-[44vh]  bg-gradient-to-b from-teal-600 to-black text-white rounded-t-2xl rounded-b-none shadow-lg p-4 flex flex-col">
         <p className="text-sm font-semibold">
           ชื่อสถานนี : <span className="font-light">ห้องชาร์จ</span>
         </p>
