@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-
+import Biglayout from "@/components/for-start-up/Biglayout";
 import RedButton from "@/components/reusecomponents/RedButton";
 
 const StartPage = () => {
@@ -11,9 +11,9 @@ const StartPage = () => {
   const router = useRouter();
 
   return (
-    <div className="flex items-center justify-center h-[50%] mt-[10vh]">
-      <RedButton ButtonText="เริ่มชาร์จ" onClick={onSubmit} />
-    </div>
+    <Biglayout
+      children={<RedButton ButtonText="เริ่มชาร์จ" onClick={onSubmit} />}
+    />
   );
 };
 

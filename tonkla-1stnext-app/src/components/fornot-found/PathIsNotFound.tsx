@@ -3,7 +3,7 @@ export default function PathIsNotFound() {
   return (
     <>
       <div className="flex flex-col justify-center items-center h-[80vh] text-center px-4">
-        <div className="text-[14rem] font-extrabold flex items-center gap-4">
+        <div className="text-[8rem]  flex items-center gap-4">
           <span>4</span>
           <span className="text-6xl">
             <span className="inline-block w-16 h-16 rounded-full border-8 border-black border-t-transparent animate-spin" />
