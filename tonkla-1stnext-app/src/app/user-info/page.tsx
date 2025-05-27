@@ -8,63 +8,83 @@ export default function ChargingSession() {
     <div className="h-screen flex flex-col justify-between">
       {/* Header */}
       <div className="flex justify-center items-center h-[45vh]">
-        <div className="w-48 h-48 rounded-full border-[12px] border-teal-400 border-t-0 border-b-0 flex flex-col items-center justify-center bg-black text-white shadow-xl">
-          <FaBolt className="text-cyan-400 text-xl mb-1" />
-          <span className="text-cyan-400 text-xl font-semibold">70%</span>
-          <span className="text-4xl font-bold">500</span>
-          <span className="text-sm">km</span>
+        <div className="relative w-[250px] h-[250px]">
+          {/* วงนอก Gradient (ขอบ) */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400 to-teal-800 p-[6px]">
+            {/* วงในดำ */}
+            <div className="w-full h-full bg-gradient-to-r from-[#003028] to-black rounded-full flex flex-col items-center justify-center">
+              <FaBolt className="text-cyan-400 text-[32px] mb-1" />
+              <div className="text-cyan-400 text-[25px] font-semibold">70%</div>
+              <div className="text-white text-[50px] font-bold leading-tight">
+                500
+              </div>
+              <div className="text-white text-[20px]">km</div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom Section */}
       <div className="flex-grow bg-gradient-to-b from-teal-600 to-black text-white rounded-t-2xl shadow-lg p-4 flex flex-col">
-        <div className="text-left text-[5vw] leading-tight mb-1">
-          <p>
-            <span className="font-bold">ชื่อสถานี :</span> hello world
+        <div className="text-left  leading-tight mb-2">
+          <p className="text-[5vw]">
+            <span className="font-bold ">ชื่อสถานี :</span> hello world
           </p>
-          <p>
-            <span className="font-bold">หัวชาร์จ : </span>หัว1
+          <p className="mt-1 text-[4vw]">
+            <span className="font-bold ">หัวชาร์จ : </span>หัว1
           </p>
         </div>
 
         <div className="flex flex-col gap-1">
           <div className="grid grid-cols-3 gap-2 text-center h-[40%] py-2">
             {/* กล่อง 1: สถานะ */}
-            <div className="bg-gradient-to-b from-green-400 to-[#ecfcf9] text-black font-bold rounded-3xl px-3 py-2 flex flex-col h-full">
-              <div className="text-left text-base">สถานะ</div>
-              <div className="flex-1 flex items-center justify-center text-lg">
+            <div className="bg-gradient-to-b from-green-400 to-[#ecfcf9] text-black  rounded-3xl px-3 py-2 flex flex-col h-full">
+              <div className="absolute text-left text-[14px] ">สถานะ</div>
+              <div className="flex-1 flex items-center justify-center text-[20px] font-bold">
                 กำลังชาร์จ
               </div>
             </div>
-            <div className="bg-gradient-to-b from-yellow-300 to-[#ecfcf9] text-black font-bold rounded-3xl px-3 py-2 flex flex-col h-full">
-              <div className="text-left text-base">อุณหภูมิ</div>
-              <div className="flex-1 flex items-center justify-center text-lg">
+            <div className="bg-gradient-to-b from-yellow-300 to-[#ecfcf9] text-black  rounded-3xl px-3 py-2 flex flex-col h-full">
+              <div className="absolute text-left text-[14px]">อุณหภูมิ</div>
+              <div className="flex-1 flex items-center justify-center text-[20px] font-bold">
                 50°C
               </div>
             </div>
 
-            <div className="bg-black-100 text-black rounded-3xl px-3 py-2 flex flex-col h-full">
-              <div className="text-left text-base font-bold">เวลา</div>
-              <div className="flex-1 flex items-center justify-center text-lg">
-                ชาร์จเต็มใน :
+            <div className="bg-gradient-to-b from-gray-300 to-[#ecfcf9] text-black rounded-3xl px-3 py-2 flex flex-col h-full">
+              <div className="absolute text-left text-base ">ชาร์จเต็มใน :</div>
+              <div className="flex-1 flex items-center justify-center text-[20px] font-bold">
+                เวลา
               </div>
             </div>
           </div>
-
           <div
-            className={`flex w-full h-[150px] text-black rounded-3xl overflow-hidden mb-5`}
+            className="relative flex w-full h-[150px] text-black rounded-3xl overflow-hidden mb-5"
             style={{
               backgroundImage: "linear-gradient(to bottom, #ecfcf9 , #008da9)",
             }}
           >
-            <div className="flex-1 py-4 text-center">
-              <div className="text-lg font-semibold">0.8 kWh</div>
-              <div className="text-sm">จำนวนหน่วยไฟที่ใช้</div>
+            {/* กล่องซ้าย */}
+            <div className="flex-1 flex flex-col px-2">
+              <div className=" absolute text-base text-center pt-2">
+                จำนวนหน่วยไฟที่ใช้
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                <div className="text-4xl font-semibold text-white">0.8 kWh</div>
+              </div>
             </div>
-            <div className="w-[1px] bg-white/50"></div>
-            <div className="flex-1 py-4 text-center">
-              <div className="text-lg font-semibold">3.8 บาท</div>
-              <div className="text-sm">ค่าชาร์จ</div>
+
+            {/* เส้นแบ่งกลาง */}
+            <div className="w-[2.5px] h-[75%] bg-black self-center"></div>
+
+            {/* กล่องขวา */}
+            <div className="flex-1 flex flex-col px-2">
+              <div className="absolute text-base text-center pt-2">
+                ค่าชาร์จ
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                <div className="text-4xl font-semibold text-white">3.8 บาท</div>
+              </div>
             </div>
           </div>
 
