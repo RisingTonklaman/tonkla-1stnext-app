@@ -2,7 +2,7 @@
 import Biglayout from "@/components/for-auth-page/BigLayout";
 import { useState } from "react";
 import { OTPInputGroup } from "@/components/for-auth-page/OTPInputGroup";
-import RedButton from "@/components/RedButton";
+import RedButton from "@/components/reusecomponents/RedButton";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
