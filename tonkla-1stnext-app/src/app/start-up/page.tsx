@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-import RedButton from "@/components/RedButton";
+import RedButton from "@/components/reusecomponents/RedButton";
 
 const StartPage = () => {
   const onSubmit = () => {

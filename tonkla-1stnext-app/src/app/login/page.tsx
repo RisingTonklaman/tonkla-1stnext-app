@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Biglayout from "@/components/for-login-page/Biglayout";
 import PhoneInputField from "@/components/for-login-page/PhoneInputField";
-import RedButton from "@/components/RedButton";
+import RedButton from "@/components/reusecomponents/RedButton";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setPhone as setPhoneFunction } from "@/store/features/loginSlice";
