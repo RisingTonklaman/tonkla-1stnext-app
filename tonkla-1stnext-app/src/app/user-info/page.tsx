@@ -6,7 +6,7 @@ export default function ChargingSession() {
   const boxClass = "h-[100%] rounded-xl py-2 text-center";
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col flex-grow">
       {/* Header */}
       <div className="relative">
         {/* Circle Progress absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 */}
@@ -21,7 +21,7 @@ export default function ChargingSession() {
       </div>
 
       {/* Bottom Section mt-auto */}
-      <div className="w-full bg-gradient-to-b from-teal-600 to-black text-white rounded-t-2xl rounded-b-none shadow-lg p-4 flex flex-col">
+      <div className="mt-auto w-full bg-gradient-to-b from-teal-600 to-black text-white rounded-t-2xl rounded-b-none shadow-lg p-4 flex flex-col">
         <p className="text-sm font-semibold">
           ชื่อสถานนี : <span className="font-light">ห้องชาร์จ</span>
         </p>
