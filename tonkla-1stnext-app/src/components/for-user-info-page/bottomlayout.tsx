@@ -55,7 +55,7 @@ export default function BottomLayout({ buttonChildren }: BottomLayoutProps) {
         >
           {/* Left Box */}
           <div className="flex-1 flex flex-col px-2">
-            <div className="text-base text-center pt-2">จำนวนหน่วยไฟที่ใช้</div>
+            <div className="text-base pt-2">จำนวนหน่วยไฟที่ใช้</div>
             <div className="flex-1 flex items-center justify-center">
               <div className="text-4xl font-semibold text-white">0.8 kWh</div>
             </div>
@@ -66,7 +66,7 @@ export default function BottomLayout({ buttonChildren }: BottomLayoutProps) {
 
           {/* Right Box */}
           <div className="flex-1 flex flex-col px-2">
-            <div className="text-base text-center pt-2">ค่าชาร์จ</div>
+            <div className="text-base pt-2">ค่าชาร์จ</div>
             <div className="flex-1 flex items-center justify-center">
               <div className="text-4xl font-semibold text-white">3.8 บาท</div>
             </div>
