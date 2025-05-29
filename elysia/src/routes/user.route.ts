@@ -1,7 +1,8 @@
 import { Elysia } from 'elysia'
-import { createUser, getUser } from '../controllers/users.controller'
+import { createUser, getUser, getUsers } from '../controllers/users.controller'
 
-const subRouter = new Elysia({ prefix: '/api' })
+const subRouter = new Elysia({ prefix: '/api/v1/user' })
+    .get('/', getUsers)
 	.get('/user/:id', getUser)
     .post('/user', createUser)
 
