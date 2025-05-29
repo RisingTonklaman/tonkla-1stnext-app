@@ -6,7 +6,7 @@ interface value {
 }
 
 export default function PhoneInputField({ phone, onchangetarget }: value) {
-  console.log(phone);
+  // console.log(phone);
   return (
     <div className="flex items-center border-2 border-cyan-400 bg-gray-200 rounded-[20px] w-[350px] h-16 mx-auto overflow-hidden shadow-[4px_4px_8px_rgba(0,0,0,0.3)]">
       <div className="relative flex items-center justify-center w-12 h-12 rounded-full ml-2">
