@@ -21,6 +21,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4",
+    "@types/axios": "^0.9.36",
     "@types/eslint": "^9.6.1",
     "@types/node": "^20",
     "@types/react": "^19",

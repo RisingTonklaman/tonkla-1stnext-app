@@ -1,13 +1,17 @@
 "use client";
 import Image from "next/image";
-interface value {
-  phone: number | string;
-  onchangetarget: (e: any) => void;
+interface Value {
+  phone: string;
+  onchangetarget: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  errorMessage?: string; // เพิ่มตรงนี้
 }
 import TextError from "../reusecomponents/TextError";
 
-export default function PhoneInputField({ phone, onchangetarget }: value) {
-  // console.log(phone);
+export default function PhoneInputField({
+  phone,
+  onchangetarget,
+  errorMessage,
+}: Value) {
   return (
     <>
       <div className="flex items-center border-2 border-cyan-400 bg-gray-200 rounded-[20px] w-[350px] h-16 mx-auto overflow-hidden shadow-[4px_4px_8px_rgba(0,0,0,0.3)]">
@@ -22,13 +26,15 @@ export default function PhoneInputField({ phone, onchangetarget }: value) {
         <div className="h-8 w-px bg-cyan-400 mx-3" />
         <input
           type="tel"
+          inputMode="numeric"
+          pattern="\d*"
           placeholder="เบอร์โทรศัพท์"
           className="flex-1 bg-gray-200 py-4 pr-4 outline-none text-base placeholder:text-gray-500"
           value={phone}
           onChange={onchangetarget}
         />
       </div>
-      <TextError />
+      {errorMessage && <TextError message={errorMessage} />}
     </>
   );
 }

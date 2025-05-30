@@ -6,7 +6,7 @@ import RedButton from "@/components/reusecomponents/RedButton";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
-const LoginPage = () => {
+const AuthPage = () => {
   const phone = useSelector((state: RootState) => state.login.phone);
   const [otpDigits, setOtpDigits] = useState<string[]>(["", "", "", ""]);
 
@@ -17,8 +17,9 @@ const LoginPage = () => {
   };
 
   const onSubmit = () => {
-    const code = otpDigits.join("");
-    console.log("Submit code:", code);
+    // const code = otpDigits.join("");
+    // console.log("Submit code:", code);
+    console.log("hello world");
   };
 
   return (
@@ -34,4 +35,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default AuthPage;
