@@ -16,7 +16,11 @@ export default function RedButton({
     "hover:shadow-[6px_6px_10px_rgba(0,0,0,0.4)] active:scale-95 " +
     "active:shadow-[inset_2px_2px_6px_rgba(0,0,0,0.3)]";
   return (
-    <button onClick={onClick} className={style ? style : defaultClass}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={style ? style : defaultClass}
+    >
       {ButtonText}
     </button>
   );
