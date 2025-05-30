@@ -1,6 +1,7 @@
 import { Elysia } from "elysia";
 import { node } from "@elysiajs/node";
 import { rateLimit } from "./middlewares/ratelimit";
+import { cors } from "@elysiajs/cors";
 import { userRoute } from "./routes/user.route";
 import { errornotfound } from "./middlewares/notfound";
 import { jwt } from "@elysiajs/jwt";
@@ -11,6 +12,7 @@ const app = new Elysia({
   },
 })
   .onBeforeHandle(rateLimit(200))
+  .use(cors())
   .use(
     jwt({
       name: "jwt",

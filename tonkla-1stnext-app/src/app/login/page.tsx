@@ -6,6 +6,7 @@ import RedButton from "@/components/reusecomponents/RedButton";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setPhone as setPhoneFunction } from "@/store/features/loginSlice";
+import { apiGet } from "@/services/apiService";
 
 const LoginPage = () => {
   const [phone, setPhone] = useState<number | string>("");
@@ -14,10 +15,23 @@ const LoginPage = () => {
   const LoginNumPhone = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch(setPhoneFunction(phone));
-    router.push("/Auth");
+    handleSubmit();
+    //router.push("/Auth");
   };
-  const onchangetarget = () => {};
+  const onchangetarget = (e: any) => {
+    setPhone(e.target.value);
+  };
 
+  const handleSubmit = async () => {
+    try {
+      const response = await apiGet(`/user/findUser/${phone}`);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //console.log(phone);
   return (
     <>
       <Biglayout
