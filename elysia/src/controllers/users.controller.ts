@@ -153,3 +153,25 @@ export const getUsers = async ({ status, set, cookie: { id } }: any) => {
     throw new InternalServerError();
   }
 };
+
+export const findUser = async ({ params, set }: any) => {
+  const { phone } = params;
+
+  const user = await prisma.user.findUnique({
+    where: {
+      phone,
+    },
+  });
+
+  if (!user) {
+    set.status = 404;
+    return {
+      message: "user not found",
+    };
+  }
+
+  set.status = 200;
+  return {
+    message: "user found",
+  };
+};
