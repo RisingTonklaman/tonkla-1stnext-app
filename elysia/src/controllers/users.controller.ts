@@ -10,6 +10,7 @@ import type {
   forlogin,
   RefreshTokenContext,
   datauser,
+  datauserEp2,
 } from "../types/types.user";
 
 export const register = async ({ status, body }: registerType) => {
@@ -132,7 +133,7 @@ export const refreshToken = async ({
   return { newAccessToken };
 };
 
-export const getUsers = async ({ status, set, cookie: { id } }: any) => {
+export const getUsers = async ({ status, set, cookie: { id } }: datauser) => {
   try {
     const user = await prisma.user.findFirst({
       where: {
@@ -154,7 +155,7 @@ export const getUsers = async ({ status, set, cookie: { id } }: any) => {
   }
 };
 
-export const findUser = async ({ params, set }: any) => {
+export const findUser = async ({ params, set }: datauserEp2) => {
   const { phone } = params;
 
   const user = await prisma.user.findUnique({

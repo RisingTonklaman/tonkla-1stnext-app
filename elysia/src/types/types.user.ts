@@ -33,4 +33,20 @@ export interface RefreshTokenContext {
 
 export interface datauser {
   status: (code: number, body: string | number | object) => any;
+  set: Context["set"];
+  cookie: {
+    id: {
+      value: string;
+      maxAge?: number;
+    };
+  };
+}
+
+export interface datauserEp2 {
+  params: {
+    phone: string;
+  };
+  set: {
+    status: number;
+  };
 }
