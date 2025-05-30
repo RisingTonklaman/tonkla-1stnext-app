@@ -9,7 +9,7 @@ datasource db {
 }
 
 model refresh_token {
-  id        String   @id @db.Char(36)
+  id        String   @id @default(uuid()) @db.Char(36)
   token     String   @unique(map: "token") @db.VarChar(255)
   userId    String   @db.Char(36)
   expiresAt DateTime @db.DateTime(0)
@@ -21,7 +21,7 @@ model refresh_token {
 }
 
 model user {
-  id            String          @id @db.Char(36)
+  id            String          @id @default(uuid()) @db.Char(36)
   phone         String          @unique(map: "phone") @db.VarChar(10)
   password      String          @db.VarChar(255)
   refresh_token refresh_token[]
