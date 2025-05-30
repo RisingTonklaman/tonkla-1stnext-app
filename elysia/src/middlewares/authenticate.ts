@@ -18,7 +18,7 @@ export const authenticate = async ({
   }
 
   id.value = data.user.id;
-  id.maxAge = process.env.COOKIE_TOKEN_EXP;
+  id.maxAge = 1000 * 60 * 13;
   console.log(id.value);
 
   // สามารถเพิ่ม data (payload JWT) เข้า context เพื่อให้ route ใช้ต่อได้ เช่น return { userId: data.userId }

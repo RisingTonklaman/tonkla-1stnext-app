@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
+import { apiGet } from "@/services/apiService";
 
 export default function SlideUpMenu({
   open,
@@ -8,6 +9,14 @@ export default function SlideUpMenu({
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
+  const getUser = async () => {
+    const response = await apiGet("/user/fordatauser", {}, true);
+    console.log(response);
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <div
       className={`

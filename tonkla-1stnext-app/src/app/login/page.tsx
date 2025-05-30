@@ -36,8 +36,8 @@ const LoginPage = () => {
       redirect("/Auth");
       console.log("hello world");
     } else {
-      console.log("เกิดข้อผิดพลาดสเตตัส:", response.error2);
-      console.log("เกิดข้อผิดพลาด:", response.error1);
+      console.log("เกิดข้อผิดพลาดสเตตัส:", response.status_error);
+      console.log("เกิดข้อผิดพลาด:", response.message_error);
     }
   };
 
