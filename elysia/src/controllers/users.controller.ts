@@ -39,7 +39,7 @@ export const register = async ({ status, body }: registerType) => {
   }
 };
 
-export const login = async ({ jwt, refreshJwt, status, body }: forlogin) => {
+export const login = async ({ jwt, refreshJwt, status, body, cookie: { refreshTokenOnServer } }: any) => {
   try {
     const data = loginSchema.parse(body);
 
@@ -70,6 +70,11 @@ export const login = async ({ jwt, refreshJwt, status, body }: forlogin) => {
       },
     });
 
+    refreshTokenOnServer.value = refreshToken;
+    refreshTokenOnServer.maxAge = 1000 * 60 ;
+
+    
+
     return status(200, {
       message: "Login successfully",
       accessToken: accessToken,
@@ -92,16 +97,17 @@ export const refreshToken = async ({
   refreshJwt,
   request,
   set,
-}: RefreshTokenContext) => {
-  const token = request.headers.get("authorization")?.replace("Bearer ", "");
-  if (!token) {
+  cookie: { refreshTokenOnServer },
+}: any) => {
+  //const token = request.headers.get("authorization")?.replace("Bearer ", "");
+  if (!refreshTokenOnServer.value) {
     set.status = 401;
     return { message: "Missing refresh token" };
   }
 
   const findRefreshToken = await prisma.refresh_token.findFirst({
     where: {
-      token,
+      token : refreshTokenOnServer.value,
     },
   });
 
