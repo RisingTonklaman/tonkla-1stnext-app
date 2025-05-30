@@ -7,7 +7,7 @@ export const authenticate = async ({
   const token = request.headers.get("authorization")?.replace("Bearer ", "");
   if (!token) {
     set.status = 401;
-    return { message: "Missing refresh token" };
+    return { message: "Missing accesstoken" };
   }
 
   const data = await jwt.verify(token);
@@ -17,9 +17,12 @@ export const authenticate = async ({
     return { message: "Invalid or expired token" };
   }
 
+  if (data && data.exp * 1000 < Date.now()) {
+    set.status = 401;
+    return { message: "Token expired" };
+  }
+
   id.value = data.user.id;
   id.maxAge = 1000 * 60 * 13;
   console.log(id.value);
-
-  // สามารถเพิ่ม data (payload JWT) เข้า context เพื่อให้ route ใช้ต่อได้ เช่น return { userId: data.userId }
 };

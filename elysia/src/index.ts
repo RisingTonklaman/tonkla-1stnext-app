@@ -19,14 +19,14 @@ const app = new Elysia({
     jwt({
       name: "jwt",
       secret: process.env.KEY_ACCESS_TOKEN?.toString() || "",
-      exp: process.env.REFRESH_TOKEN_EXP,
+      exp: "30s",
     })
   )
   .use(
     jwt({
       name: "refreshJwt",
       secret: process.env.KEY_REFRESH_TOKEN?.toString() || "",
-      exp: process.env.REFRESH_TOKEN_EXP,
+      exp: "1m",
     })
   )
   .use(userRoute)
