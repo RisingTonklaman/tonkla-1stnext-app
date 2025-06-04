@@ -67,6 +67,8 @@ export const apiGet = async <T = any>(
           auth
         );
       } catch (refreshError: any) {
+
+
         return {
           data: null,
           status: refreshError?.response?.status ?? 500,
